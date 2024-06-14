@@ -1,0 +1,54 @@
+body {
+  font-family: "Red Hat Text", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500; /*300-700*/
+  font-style: normal;
+  display: grid;
+  min-height: 100vh;
+  background-image: url("./assets/marble.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  align-items: center;
+}
+.home-container {
+  display: grid;
+}
+h1 {
+  display: block;
+  margin-inline: auto;
+  font-size: clamp(18px, 5vw, 32px);
+  text-align: center;
+  margin-bottom: 32px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  font-weight: 500;
+
+  color: var(--text-color);
+}
+.homeDiv {
+  display: block;
+  margin-inline: auto;
+  background-color: hsl(16, 100%, 98%, 40%);
+
+  min-width: 330px;
+
+  padding: 32px 16px;
+  border-radius: 2em;
+  backdrop-filter: blur(1px);
+}
+@media only screen and (min-width: 500px) {
+  .homeDiv {
+    padding: 40px 32px;
+  }
+}
+@media only screen and (min-width: 750px) {
+  .homeDiv {
+    width: 700px;
+  }
+}
+@media only screen and (min-width: 1000px) {
+  .homeDiv {
+    width: 800px;
+    padding: 64px 16px;
+  }
+}

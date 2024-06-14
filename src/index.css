@@ -1,0 +1,5 @@
+:root {
+  --text-color: hsl(16, 25%, 27%);
+  --timer-text: hsl(0, 47%, 57%);
+  --bg-timer-flip: hsl(16, 100%, 98%);
+}

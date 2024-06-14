@@ -1,0 +1,167 @@
+.timerDiv {
+  display: grid;
+  width: 300px;
+  margin-inline: auto;
+  grid-template-columns: 63px 63px 63px 63px;
+  column-gap: 16px;
+}
+.time-text-under {
+  text-transform: uppercase;
+  font-size: clamp(10px, 2.5vw, 18px);
+  color: var(--text-color);
+  margin-top: 8px;
+  text-align: center;
+}
+
+.timer-flip {
+  border-radius: 0.3em;
+  overflow: visible;
+  filter: drop-shadow(0px 8px 2px hsl(16, 25%, 27%, 40%));
+
+  -webkit-mask-image: radial-gradient(6px at 0px 50%, #0000 98%, #000),
+    radial-gradient(6px at 100% 50%, #0000 98%, #000);
+  -webkit-mask-position: 0 0, 0 0;
+  -webkit-mask-repeat: no-repeat, no-repeat;
+  -webkit-mask-composite: intersect;
+
+  mask-image: radial-gradient(6px at 0px 50%, #0000 98%, #000),
+    radial-gradient(6px at 100% 50%, #0000 98%, #000);
+  mask-position: 0 0, 0 0;
+  mask-repeat: no-repeat, no-repeat;
+  mask-composite: intersect;
+}
+
+.flip-top-back {
+  position: absolute;
+  top: 0%;
+  background-color: var(--bg-timer-flip);
+  width: 100%;
+  height: 100%;
+  border-radius: 0.3em;
+  z-index: 1;
+  filter: brightness(95%);
+}
+.flip-top-back-animation {
+  animation: flipanimationTopBack 500ms ease-in-out;
+}
+@keyframes flipanimationTopBack {
+  0% {
+    filter: brightness(70%);
+  }
+  100% {
+    filter: brightness(95%);
+  }
+}
+.timer-number-top-noanimation {
+  text-align: center;
+  font-size: 24px;
+  color: var(--timer-text);
+  display: block;
+  position: relative;
+  top: 17px;
+}
+
+.flip-top,
+.flip-bottom {
+  background-color: var(--bg-timer-flip);
+  width: 100%;
+  height: 49%;
+  border-radius: 0.3em;
+  z-index: 2;
+}
+
+.flip-top {
+  position: relative;
+  filter: brightness(95%);
+
+  transform-origin: bottom;
+  z-index: 3;
+}
+.flip-top-animation {
+  animation: flipanimationTop 500ms ease-in-out;
+}
+.flip-top-div {
+  position: relative;
+}
+@keyframes flipanimationTop {
+  0% {
+  }
+  50% {
+    /* transform-style: preserve-3d;*/
+    transform: rotateX(-45deg), skewX(25deg);
+
+    height: 0%;
+    width: 100%;
+    filter: brightness(96.5%);
+  }
+  100% {
+    transform: rotateX(-180deg);
+    height: 49%;
+    filter: brightness(98%);
+  }
+}
+
+.number-container {
+  overflow: hidden;
+}
+.timer-number-top,
+.timer-number-bottom {
+  text-align: center;
+  font-size: 26px;
+  color: var(--timer-text);
+  display: block;
+}
+.timer-number-top {
+  position: relative;
+  top: 17px;
+}
+.timer-number-top-animation {
+  animation: numberanimation 500ms;
+}
+@keyframes numberanimation {
+  0% {
+    opacity: 1;
+  }
+  49% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+.timer-number-bottom {
+  position: relative;
+  top: -17px;
+}
+@media only screen and (min-width: 750px) {
+  .timerDiv {
+    width: 600px;
+    column-gap: 24px;
+    grid-template-columns: 132px 132px 132px 132px;
+  }
+
+  .timer-number-top-noanimation {
+    font-size: 48px;
+    top: 32px;
+  }
+  .timer-number-top,
+  .timer-number-bottom {
+    font-size: 48px;
+  }
+  .timer-number-top {
+    position: relative;
+    top: 32px;
+  }
+  .timer-number-bottom {
+    position: relative;
+    top: -32px;
+  }
+}
+@media only screen and (min-width: 1000px) {
+  .time-text-under {
+    margin-top: 16px;
+  }
+}

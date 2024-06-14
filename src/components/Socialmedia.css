@@ -1,0 +1,20 @@
+.socialMediaDiv {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  column-gap: 24px;
+  justify-self: center;
+  position: absolute;
+  bottom: 48px;
+}
+.icon {
+  width: 24px;
+  cursor: pointer;
+}
+.icon:hover {
+  filter: brightness(175%) hue-rotate(-9deg) saturate(220%);
+}
+@media only screen and (min-width: 750px) {
+  .socialMediaDiv {
+    column-gap: 32px;
+  }
+}

@@ -1,10 +1,16 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
+//import React from "react";
+import * as React from "react";
+import { createRoot } from "react-dom/client";
+//import ReactDOM from "react-dom/client";
+//import App from './App';
+
 import "./index.css";
 import { RouterProvider } from "react-router-dom";
-import { router } from "./components/Routes.tsx";
+import { router } from "./components/Routes";
 
-ReactDOM.createRoot(document.getElementById("root")!).render(
+const rootElement = document.getElementById("root");
+const root = createRoot(rootElement!);
+root.render(
   <React.StrictMode>
     <RouterProvider router={router} />
   </React.StrictMode>
